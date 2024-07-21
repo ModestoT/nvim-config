@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.o.guifont = "JetBrainsMono Nerd Font Mono"
 
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
