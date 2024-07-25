@@ -21,7 +21,8 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 - Neovim is set up to already check if we are in a WSL env and if we are to use a different method for the clipboard
 - for this to work correctly you must create a nvim_paste shell script (only needed if using WSL)
 - Below is the script added to options to handle copy/paste
-  `
+
+```lua
 local in_wsl = os.getenv("WSL_DISTRO_NAME") ~= nil
 if in_wsl then
   vim.g.clipboard = {
@@ -33,12 +34,14 @@ if in_wsl then
     },
     cache_enabled = true,
   }
-end`
+end
+```
+
 - Create a nvim_paste shell script in a area that is exposed to the global $PATH (mine is located in .local/bin)
-- Add the following script to handle pasting
-  `
-  #!/bin/sh
+- Add the following script to handle pasting, this will handle pasting and removing extra lines from UNIX env
 
-powershell.exe Get-Clipboard | tr -d '\r' | sed -z '$ s/\n$//'`
+```
+#!/bin/sh
 
-- This will handle pasting and removing extra lines from UNIX env
+powershell.exe Get-Clipboard | tr -d '\r' | sed -z '$ s/\n$//'
+```
