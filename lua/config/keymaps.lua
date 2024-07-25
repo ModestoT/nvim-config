@@ -45,3 +45,15 @@ keymap.set("n", "<C-S-j>", "<C-w>-")
 keymap.set("n", "<C-j>", function()
   vim.diagnostic.goto_next()
 end, opts)
+
+-- Close all other buffers
+keymap.set("n", "<leader>bo", function()
+  local buffers = vim.api.nvim_list_bufs()
+  local current_buffer = vim.api.nvim_get_current_buf()
+
+  for _, i in ipairs(buffers) do
+    if i ~= current_buffer then
+      vim.api.nvim_buf_delete(i, {})
+    end
+  end
+end, opts)
