@@ -13,6 +13,7 @@ return {
         "vim",
         "lua",
         "c_sharp",
+        "vue",
       },
       query_linter = {
         enable = true,

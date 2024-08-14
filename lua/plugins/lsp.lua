@@ -1,3 +1,6 @@
+local mason_packages = vim.fn.stdpath("data") .. "/mason/packages"
+local volar_path = mason_packages .. "/vue-language-server/node_modules/@vue/language-server"
+
 return {
   -- tools
   {
@@ -22,6 +25,15 @@ return {
       servers = {
         cssls = {},
         tsserver = {
+          init_options = {
+            plugins = {
+              {
+                name = "@vue/typescript-plugin",
+                location = volar_path,
+                languages = { "vue" },
+              },
+            },
+          },
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
           end,
@@ -48,6 +60,13 @@ return {
                 includeInlayFunctionLikeReturnTypeHints = true,
                 includeInlayEnumMemberValueHints = true,
               },
+            },
+          },
+        },
+        volar = {
+          init_options = {
+            vue = {
+              hybridMode = false,
             },
           },
         },
@@ -129,4 +148,3 @@ return {
     end,
   },
 }
-
