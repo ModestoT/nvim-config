@@ -36,6 +36,7 @@ end
 
 - Create a nvim_paste shell script in a area that is exposed to the global $PATH (mine is located in .local/bin)
 - Add the following script to handle pasting, this will handle pasting and removing extra lines from UNIX env
+- make shell script excutable `chmod u+x nvim_paste`
 
 ```
 #!/bin/sh
