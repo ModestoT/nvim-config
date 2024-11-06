@@ -11,6 +11,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 - Create .config directory mkdir ~/.config
 - Clone this repo into the config folder git clone https://github.com/ModestoT/nvim-config.git
 - Rename cloned folder to nvim mv nvim-config/ nvim
+- If run into error `No C compiler found! "cc", "gcc", "clang", "cl", "zig" are not executable.` install on linux `sudo apt update && sudo apt install build-essential`
 
 ## Set up clipboard
 
