@@ -8,11 +8,14 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 - Install Ubuntu WSL instance on your windows 11 machina if not already installed in powershell wsl --install
 - Install Terminal font https://www.nerdfonts.com/font-downloads JetBrainsMono Nerd Font
 - Install neovim [docs link](https://github.com/neovim/neovim/wiki/Installing-Neovim/921fe8c40c34dd1f3fb35d5b48c484db1b8ae94b#linux)
+- Create .config directory mkdir ~/.config
+- Clone this repo into the config folder git clone https://github.com/ModestoT/nvim-config.git
+- Rename cloned folder to nvim mv nvim-config/ nvim
 
 ## Set up clipboard
 
 - Neovim is set up to already check if we are in a WSL env and if we are to use a different method for the clipboard
-- for this to work correctly you must create a nvim_paste shell script (only needed if using WSL)
+- For this to work correctly you must create a nvim_paste shell script (only needed if using WSL)
 - Below is the script added to options to handle copy/paste
 
 ```lua
