@@ -6,15 +6,8 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 ## Set up steps
 
 - Install Ubuntu WSL instance on your windows 11 machina if not already installed in powershell wsl --install
-- Install neovim
-  - wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
-  - tar xzvf nvim-linux64.tar.gz
-  - create .config directory mkdir ~/.config
-  - clone this repo into the config folder git clone https://github.com/ModestoT/nvim-config.git
-  - rename cloned folder to nvim mv nvim-config/ nvim
-- Download [Neovide](https://neovide.dev/index.html)
-  - Update the neovide config file to have neovide run through WSL [here](https://neovide.dev/config-file.html)
-  - install rust with rustup on both [windows and WSL](https://rustup.rs/)
+- Install Terminal font https://www.nerdfonts.com/font-downloads JetBrainsMono Nerd Font
+- Install neovim [docs link](https://github.com/neovim/neovim/wiki/Installing-Neovim/921fe8c40c34dd1f3fb35d5b48c484db1b8ae94b#linux)
 
 ## Set up clipboard
 
