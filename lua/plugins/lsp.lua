@@ -1,6 +1,13 @@
 local mason_packages = vim.fn.stdpath("data") .. "/mason/packages"
 local volar_path = mason_packages .. "/vue-language-server/node_modules/@vue/language-server"
 
+local get_intelephense_key = function()
+  local f = assert(io.open(os.getenv("HOME") .. "/intelephense/license.txt", "rb"))
+  local content = f:read("*a")
+  f:close()
+  return string.gsub(content, "%s+", "")
+end
+
 return {
   -- tools
   {
@@ -71,6 +78,11 @@ return {
           },
         },
         html = {},
+        intelephense = {
+          init_options = {
+            licenceKey = get_intelephense_key(),
+          },
+        },
         lua_ls = {
           -- enabled = false,
           single_file_support = true,
@@ -145,6 +157,16 @@ return {
     dependencies = { "hrsh7th/cmp-emoji" },
     opts = function(_, opts)
       table.insert(opts.sources, { name = "emoji" })
+    end,
+  },
+
+  -- WOW api LSP lua extension
+  {
+    "tyrannican/warcraft-api.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    ft = "lua",
+    config = function()
+      require("warcraft-api").setup()
     end,
   },
 }
